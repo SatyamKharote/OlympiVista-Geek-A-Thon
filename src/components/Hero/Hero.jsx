@@ -27,7 +27,7 @@ const Hero = () => {
         {/* Right Side */}
         <div className="flexCenter hero-right">
           <div className="image-container">
-            <img src="./bg3.svg" alt="Loading Image.." />
+            <img src="./bg2.svg" alt="Loading Image.." />
           </div>
         </div>
       </div>
