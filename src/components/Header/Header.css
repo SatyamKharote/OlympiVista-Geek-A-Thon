@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee+Spice&family=Heebo:wght@500&family=Lato:ital@1&family=Lugrasimo&family=Lumanosimo&family=Montserrat&family=Noto+Sans+Cypro+Minoan&family=Poppins:wght@400;500;600;700&display=swap");
+
+.h-wrapper {
+  background: var(--black); /* Transparent background (0 opacity) */
+  color: #ffff;
+}
+
+.h-container {
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: var(--secondary);
+}
+
+.h-menu {
+  gap: 2rem;
+}
+.h-menu a{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #fff;
+}
+
+.h-menu > *:hover {
+  cursor: pointer;
+}

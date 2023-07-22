@@ -1,0 +1,39 @@
+.hero-wrapper {
+  color: #fff;
+  position: relative;
+  padding-bottom: 2rem;
+  background-color: var(--black);
+}
+
+/* .hero-wrapper::before {
+  content: "";
+  background-image: url("./olympic.jpg");
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.7; 
+  z-index: -1;
+} */
+
+.hero-container {
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+/* right side */
+
+.image-container {
+  width: 30rem;
+  height: 35rem;
+  overflow: hidden;
+  border-radius: 15rem 15rem 0 0;
+  border: 8px solid rgba(255, 255, 255, 0.12);
+}
+.image-container img {
+  height: 100%;
+  width: 100%;
+}
