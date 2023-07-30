@@ -1,7 +1,7 @@
 import React from "react";
 import "./Hero.css";
 import { useNavigate } from "react-router-dom";
-import Explore from "../Explore/Explore";
+import Explore from "../../pages/Explore";
 const Hero = () => {
   const navigate = useNavigate();
   return (

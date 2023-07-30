@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import "./App.css"
 import Home from "./pages/Home";
-import Explore from './components/Explore/Explore';
+// import Explore from './components/Explore/Explore';
+import Explore from './pages/Explore';
 function App() {
   return (
     <div className="App">
