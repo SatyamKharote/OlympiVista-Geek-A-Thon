@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rising Star Prediction</title>
+</head>
+<body>
+    <h1>Rising Star Prediction</h1>
+    <form action="/predict" method="post">
+        <label for="event_gender">Event Gender:</label>
+        <select name="event_gender" required>
+            <option value="Men">Men</option>
+            <option value="Mixed">Mixed</option>
+            <option value="Open">Open</option>
+            <option value="Women">Women</option>
+        </select><br>
+
+        <label for="participant_type">Participant Type:</label>
+        <select name="participant_type" required>
+            <option value="Athlete">Athlete</option>
+            <option value="GameTeam">GameTeam</option>
+        </select><br>
+
+        <label for="games_participations">Games Participations:</label>
+        <input type="number" name="games_participations" required><br>
+
+        <label for="age">Age:</label>
+        <input type="number" name="age" required><br>
+
+        <label for="gold_medal">Number of Gold Medal:</label>
+        <input type="number" name="gold_medal" required><br>
+
+        <label for="silver_medal">Number of Silver Medal:</label>
+        <input type="number" name="silver_medal" required><br>
+
+        <label for="bronze_medal">Number of Bronze Medal:</label>
+        <input type="number" name="bronze_medal" required><br>
+
+        <label for="first_game_played">First Game Played (Year):</label>
+        <input type="number" name="first_game_played" required><br>
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>

@@ -1,0 +1,93 @@
+/* Style for the form container */
+.main-form{
+  background: url("../../images/olympic.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+form {
+  max-width: 400px;
+  margin: 20px auto; /* Add margin to create space between the form and header/footer */
+  padding: 20px;
+  border: 2px solid #3498db;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+}
+/* Style for the form labels */
+label {
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+  color: #3498db;
+}
+
+/* Style for the select input */
+select,
+input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  font-size: 16px;
+  color: #555;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Style for the select input focus */
+select:focus,
+input[type="number"]:focus {
+  background-color: #e0e0e0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for the submit button */
+button[type="submit"] {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #2980b9;
+}
+
+/* Style for the form errors */
+input:invalid,
+select:invalid {
+  border-color: red;
+}
+
+/* Style for the error message */
+input:invalid + span,
+select:invalid + span {
+  color: red;
+  display: block;
+  margin-top: 5px;
+}
+
+/* Remove default outline on focus */
+input:focus,
+select:focus,
+button:focus {
+  outline: none;
+}
+
+.predict-result p {
+  font-size: 1.2rem;
+  padding: 10px;
+  background-color: #2ecc71;
+  color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 20px;
+} 

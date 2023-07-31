@@ -29,6 +29,9 @@ const Hero = () => {
                 <button className="button" onClick={() => navigate("/Explore")}>
                   Explore
                 </button>
+                <button className="button" style={{marginLeft : "15px"}} onClick={() => navigate("/PredictForm")}>
+                  Predict Rising Star
+                </button>
               </div>
             </div>
           </div>

@@ -43,7 +43,7 @@ const Explore = () => {
       <Header />
 
       <div style={{display:"flex", justifyContent:"center",margin: "30px 0px"}}>
-      <label htmlFor="searchBox">Search</label>
+      <label htmlFor="searchBox" style={{color : "#fff"}}>Search</label>
       <input type="text" id="searchBox" onChange={handleSearch} value={searchText}/>
       </div>
 
