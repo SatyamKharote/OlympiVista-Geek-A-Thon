@@ -1,25 +1,50 @@
-h1{
-    color: aliceblue;
+h1 {
+  color: aliceblue;
 }
-
-.container{
-    width: 90%;
-    margin: auto;
+body{
+    background: #212121;
+}
+.container {
+  width: 90%;
+  margin: auto;
 }
 
 .grid-item {
-    background-color: rgb(39, 38, 38);
-    border: 1px solid white;
-    text-align: center;
-    margin: 15px;
-    height: 300px;
-    border-radius: 10px;
-    border-color: white;
-    
+  background-color: rgb(39, 38, 38);
+  border: 1px solid white;
+  text-align: center;
+  margin: 15px;
+  height: 300px;
+  border-radius: 10px;
+  border-color: white;
+}
+#searchBox {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
 }
 
-.gridBox{
-    grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
-    display:grid;
-    justify-content: center;
+/* Style for the search label */
+label {
+  font-size: 30px;
+  margin-right: 10px;
+  color: #007bff; /* Add a blue color to the label text */
+  font-weight: bold; /* Add bold font weight to the label text */
+  font-family: "Arial", sans-serif; /* Use a different font family for the label text */
+}
+
+/* Add some cool effects on focus */
+#searchBox:focus {
+  border-color: #007bff; /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a subtle box shadow on focus */
+}
+
+.gridBox {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
+  display: grid;
+  justify-content: center;
 }

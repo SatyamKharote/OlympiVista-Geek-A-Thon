@@ -15,6 +15,9 @@ const Header = () => {
   const handleDeveloperClick = () => {
     navigate("/Developer"); // Redirect to the Developer page when clicked
   };
+  const handleAboutusClick = () => {
+    navigate("/Aboutus"); // Redirect to the Developer page when clicked
+  };
 
   return (
     <section className="h-wrapper">
@@ -25,7 +28,9 @@ const Header = () => {
           setMenuOpened(false)
         }}>
           <div className="flexCenter h-menu" style={getMenuStyles(menuOpened)}>
-            <a href="" className="button">About Us</a>
+            <button className="button" onClick={handleAboutusClick}>
+              About Us
+            </button>
             <button className="button" onClick={handleDeveloperClick}>
               Developer
             </button>

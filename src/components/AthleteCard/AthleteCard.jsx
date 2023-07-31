@@ -30,7 +30,7 @@ import "../AthleteCard/AthleteCard.css";
 
 const AthleteCard = ({ athlete, id, setAthleteData, setShowProfile }) => {
   const baseUrl = "http://localhost:5000";
-  const { athelete_name, country_name, slug_game, athlete_full_name } = athlete;
+  const { athelete_name, country_name, discipline_title, athlete_full_name } = athlete;
 
   const handleClick = async (id) => {
     console.log(id);
@@ -68,7 +68,7 @@ const AthleteCard = ({ athlete, id, setAthleteData, setShowProfile }) => {
             <div className="card__info">
               <span className="card__category">{athlete_full_name}</span>
               <h3 className="card__title">{country_name}</h3>
-              <span className="card__by">{slug_game}</span>
+              <span className="card__by">{discipline_title}</span>
               <div className="view_profile">
                 <button onClick={() => handleClick(id)} className="button">
                   View Profile

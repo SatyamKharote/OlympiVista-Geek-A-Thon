@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 // import Explore from './components/Explore/Explore';
 import Explore from "./pages/Explore";
 import Athlete from "./Contexts/Athlete";
+import Developer from "./pages/Developer";
 function App() {
   return (
     <div className="App">
@@ -12,6 +13,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Explore" element={<Explore />} />
+            <Route path="/Developer" element={<Developer />} />
           </Routes>
         </Athlete>
       </BrowserRouter>

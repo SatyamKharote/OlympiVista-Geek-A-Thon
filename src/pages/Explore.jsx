@@ -5,7 +5,7 @@ import AthleteCard from "../components/AthleteCard/AthleteCard";
 import "../components/Explore/Explore.css";
 import { useContext } from "react";
 import AthleteContext from "../Contexts/AthleteContext"; 
-import UserProfile from "../components/UserProfile";
+import UserProfile from "../components/UserProfile/UserProfile";
 
 const Explore = () => {
 
