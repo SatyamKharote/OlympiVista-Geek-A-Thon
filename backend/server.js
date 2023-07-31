@@ -5,6 +5,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const colors = require("colors");
 const athleteRoutes = require("./routes/athleteRoutes");
+const path = require("path");
 
 const app = express();
 
@@ -12,6 +13,11 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const frontendPath = path.join(__dirname, "/dist");
+app.use(express.static(frontendPath));
 // Connect to MongoDB
 mongoose
   .connect(process.env.MONGO_URI, {
@@ -32,6 +38,7 @@ app.use("/api", athleteRoutes);
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
+
 
 app.listen(PORT, () => {
   console.log(`Server Running in ${process.env.NODE_ENV} mode On Port ${PORT}`.white.bold);
