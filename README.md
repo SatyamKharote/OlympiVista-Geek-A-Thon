@@ -1,8 +1,8 @@
 # OlympiVista-Geek-A-Thon
 
-# OlympiVista-Geek-A-Thon
+## ScreenShots
 
-![Olympic Logo](/flag_images/)
+<img src="https://github.com/SatyamKharote/OlympiVista-Geek-A-Thon/blob/master/uploads/olympivista_screenshot.jpg"  alt=""/>
 
 ## Introduction
 
@@ -44,6 +44,4 @@ Satyam: Information Technology student at GEC Bhavnagar, pursuing a career in fu
   </tr>
 </table>
 
-## ScreenShots
 
-<img src="https://drive.google.com/file/d/1sgavNllMmMW4IK8g7FCQT7fk5jlGtJvF/view?usp=sharing" width="100px;" alt=""/>
