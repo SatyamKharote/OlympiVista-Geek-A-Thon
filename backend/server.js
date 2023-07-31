@@ -26,10 +26,12 @@ mongoose
     process.exit(1);
   });
 
+  const PORT = process.env.PORT || 5000;
 // Use the athleteRoutes
 app.use("/api", athleteRoutes);
-
-const PORT = process.env.PORT || 5000;
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
 
 app.listen(PORT, () => {
   console.log(`Server Running in ${process.env.NODE_ENV} mode On Port ${PORT}`.white.bold);

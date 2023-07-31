@@ -3,39 +3,59 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import AthleteCard from "../components/AthleteCard/AthleteCard";
 import "../components/Explore/Explore.css";
+import { useContext } from "react";
+import AthleteContext from "../Contexts/AthleteContext"; 
+import UserProfile from "../components/UserProfile";
+
 const Explore = () => {
-  const [athletes, setAthletes] = useState([]);
+
+  const {athletes} = useContext(AthleteContext);
+  const [showProfile, setShowProfile] = useState(false);
+  const [athleteData, setAthleteData] = useState(null);
+  const [searchText, setSearchText] = useState("");
+  const [showAthletes, setAthletes] = useState(athletes);
+
+  
 
   useEffect(() => {
-    // Function to fetch athletes data from the backend
-    const fetchAthletes = async () => {
-      try {
-        const response = await fetch("http://localhost:5000/api/athletes");
-        if (!response.ok) {
-          throw new Error("Error fetching athletes");
-        }
-        const data = await response.json();
-        setAthletes(data);
-        console.log(athletes)
-      } catch (error) {
-        console.error("Error fetching athletes:", error.message);
-      }
-    };
-
-    // Call the fetchAthletes function to fetch the data
-    fetchAthletes();
-  }, []);
-
+    (searchText.trim() === "") || !searchText ? setAthletes(athletes) :
+    setAthletes(
+      athletes.filter((athle) => {
+        return athle.Name[0].athlete_full_name.toLowerCase().includes(searchText.toLowerCase().trim());
+      })
+    )
+  }, [searchText]);
+     
+  const handleSearch =(e)=>{
+    
+    setSearchText(e.target.value);
+     
+  }
   return (
-    <div>
+<>
+{
+  
+  showProfile ? <><Header />
+   <UserProfile data={athleteData} setShowProfile={setShowProfile} />
+   <Footer />
+   </> : 
+    <>
       <Header />
-      <div className="athlete-list">
-        {athletes.map((athlete, index) => (
-          <AthleteCard key={`${athlete._id}-${index}`} athlete={athlete} />
+
+      <div style={{display:"flex", justifyContent:"center",margin: "30px 0px"}}>
+      <label htmlFor="searchBox">Search</label>
+      <input type="text" id="searchBox" onChange={handleSearch} value={searchText}/>
+      </div>
+
+      <div className="athlete-list gridBox container">
+        {showAthletes.map((athlete) => (
+          <AthleteCard key={athlete._id} athlete={athlete.Name[0]} id={athlete._id}  setShowProfile={setShowProfile} setAthleteData={setAthleteData} />
         ))}
       </div>
       <Footer />
-    </div>
+    </>
+}
+</>
   );
 };
 

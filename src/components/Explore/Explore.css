@@ -1,3 +1,25 @@
 h1{
     color: aliceblue;
 }
+
+.container{
+    width: 90%;
+    margin: auto;
+}
+
+.grid-item {
+    background-color: rgb(39, 38, 38);
+    border: 1px solid white;
+    text-align: center;
+    margin: 15px;
+    height: 300px;
+    border-radius: 10px;
+    border-color: white;
+    
+}
+
+.gridBox{
+    grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
+    display:grid;
+    justify-content: center;
+}
