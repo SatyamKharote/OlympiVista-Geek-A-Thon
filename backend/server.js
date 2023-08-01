@@ -34,7 +34,7 @@ const PORT = process.env.PORT || 5000;
 // Use the athleteRoutes
 app.use("/api", athleteRoutes);
 
-const frontendPath = path.join(__dirname, "/dist");
+const frontendPath = path.join(__dirname, "../dist");
 app.use(express.static(frontendPath));
 
 app.get('/', (req, res) => {
