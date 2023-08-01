@@ -13,8 +13,9 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-const frontendPath = path.join(__dirname, "/dist");
-app.use(express.static(frontendPath));
+
+
+
 // Connect to MongoDB
 mongoose
   .connect(process.env.MONGO_URI, {
@@ -35,6 +36,9 @@ app.use("/api", athleteRoutes);
 app.get('/', (req, res) => {
   res.send('Hello World!')
 });
+
+const frontendPath = path.join(__dirname, "/dist/index.html");
+app.use(express.static(frontendPath));
 
 app.listen(PORT, () => {
   console.log(`Server Running in ${process.env.NODE_ENV} mode On Port ${PORT}`.white.bold);
