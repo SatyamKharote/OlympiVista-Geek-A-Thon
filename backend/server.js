@@ -33,12 +33,15 @@ mongoose
 const PORT = process.env.PORT || 5000;
 // Use the athleteRoutes
 app.use("/api", athleteRoutes);
+
+const frontendPath = path.join(__dirname, "/dist");
+app.use(express.static(frontendPath));
+
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.sendFile(path.join(__dirname, '/dist', 'index.html'));
 });
 
-const frontendPath = path.join(__dirname, "/dist/index.html");
-app.use(express.static(frontendPath));
+
 
 app.listen(PORT, () => {
   console.log(`Server Running in ${process.env.NODE_ENV} mode On Port ${PORT}`.white.bold);
