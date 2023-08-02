@@ -6,8 +6,8 @@ const bodyParser = require("body-parser");
 const colors = require("colors");
 const athleteRoutes = require("./routes/athleteRoutes");
 const path = require("path");
-import { fileURLToPath } from "url";
-import { dirname } from "path";
+const fileURLToPath = require("url");
+
 
 const app = express();
 
