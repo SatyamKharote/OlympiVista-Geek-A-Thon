@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import AthleteContext from './AthleteContext'
 
  
-const baseUrl = "http://localhost:5000";
+const baseUrl = "https://olympivista.onrender.com";
 
 
 function Athlete(props) {
