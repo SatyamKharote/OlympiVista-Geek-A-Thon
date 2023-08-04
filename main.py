@@ -6,10 +6,11 @@ from datetime import datetime
 from model_training.model_training import train_model
 from flask_cors import CORS
 
-athlete_info = load_and_preprocess()
-# push_data(athlete_info)
+model_train_data , push_data , = load_and_preprocess()
 
-lr_model = train_model(athlete_info)
+# push_data(push_data)
+
+lr_model , rf_model = train_model(model_train_data)
 
 app = Flask(__name__)
 CORS(app)
@@ -89,7 +90,7 @@ def predict():
                 
 
             # Make the prediction using the logistic regression model
-            probability = lr_model.predict_proba(custom_data_df)[0][1]
+            probability = rf_model.predict_proba(custom_data_df)[0][1]
 
            
 

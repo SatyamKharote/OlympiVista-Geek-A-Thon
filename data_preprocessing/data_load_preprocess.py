@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 import copy
+from sklearn.preprocessing import LabelEncoder
 from pymongo.mongo_client import MongoClient
 import os
 
@@ -40,7 +41,7 @@ def load_and_preprocess():
 
     combined_df.drop(columns=['athlete_url'] , inplace=True)
 
-    combined_df['athlete_medals'] = combined_df['athlete_medals'].str.replace("\n" , "").replace("\t" , "")
+    combined_df['athlete_medals'] = combined_df['athlete_medals'].apply(filter_medal)
 
     combined_df['bio'] = combined_df['bio'].str.replace("\n" , "").replace("\t" , "")
 
@@ -91,7 +92,23 @@ def load_and_preprocess():
         'new_bio': 'bio'    
     }, inplace=True)
 
-    return combined_df
+    ml_data =  combined_df.drop(columns=['slug_game','event_title' , 'bio' , 'country_name' , 'country_code' , 'country_3_letter_code' , 'athlete_year_birth' , 'athlete_medals' , 'country_flag' , 'discipline_title' , 'medal_type' , 'athlete_full_name' , 'first_game' , 'index'] )
+
+    encoder = LabelEncoder()
+
+
+    # 0 for Men
+    # 1 for Mixed
+    # 2 for Open
+    # 3 for Women
+    ml_data['event_gender'] = encoder.fit_transform(ml_data['event_gender'])
+
+
+    # 0 for Athlete
+    # 1 for GameTeam
+    ml_data['participant_type'] = encoder.fit_transform(ml_data['participant_type'])
+
+    return ml_data , combined_df
 
 
 def push_data(combined_df):
@@ -134,7 +151,11 @@ def medal_count(stri):
     return gold , silver , bronze
 
 
+def filter_medal(stri):
 
+    stri = str(stri)
+    stri = stri.replace("\n" , "").replace("\r", "")
+    return stri
 
 
 def get_country_flag(country_name):

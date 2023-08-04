@@ -4,7 +4,6 @@ import Home from "./pages/Home";
 // import Explore from './components/Explore/Explore';
 import Explore from "./pages/Explore";
 import Athlete from "./Contexts/Athlete";
-import Developer from "./pages/Developer";
 import PredictForm from "./components/PredictForm/PredictForm";
 function App() {
   return (
@@ -15,7 +14,6 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/Explore" element={<Explore />} />
             <Route path="/PredictForm" element={<PredictForm />} />
-            <Route path="/Developer" element={<Developer />} />
           </Routes>
         </Athlete>
       </BrowserRouter>

@@ -30,12 +30,12 @@ app.use(cors());
 app.use(bodyParser.json());
 
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 
 
-const frontendPath = path.join(__dirname, "/dist");
-app.use(express.static(frontendPath));
+// const frontendPath = path.join(__dirname, "/dist");
+// app.use(express.static(frontendPath));
 
 // Connect to MongoDB
 mongoose
